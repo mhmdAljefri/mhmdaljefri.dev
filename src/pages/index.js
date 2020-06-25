@@ -1,21 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import { Box } from "theme-ui"
+import Wrapper from "../components/wrapper"
+import Skills from "../skills"
+import ProjectsSectionContainer from "../containers/project-section-container"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    <Wrapper>
+      <Box as="h1" sx={{ marginY: 6, maxWidth: 500 }}>
+        Hello <strong>I'm Mohammed Aljefri</strong> Fullstack web developer
+        Lives on Aden <Skills />
+      </Box>
+    </Wrapper>
+    <ProjectsSectionContainer />
   </Layout>
 )
 

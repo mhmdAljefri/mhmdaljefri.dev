@@ -1,8 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `Mohammed Aljefri`,
+    description: `Web developer.`,
+    baseUrl: `https://mhmdaljefri.dev`,
     author: `@gatsbyjs`,
+    navigations: [
+      {
+        title: "Blog",
+        to: "/blog",
+      },
+      {
+        title: "Contact",
+        to: "/contact",
+        hero: true,
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,8 +25,50 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content`,
+        name: `markdown-pages`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // `gatsby-remark-embedder`,
+          // `gatsby-remark-graphviz`,
+          `gatsby-remark-code-titles`,
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: 104,
+            },
+          },
+          // gatsby-remark-relative-images must
+          // go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+          // convert images using http to https in plugin library READMEs
+          `gatsby-remark-http-to-https`,
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -27,8 +81,11 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+
+    `gatsby-plugin-twitter`,
+    // `gatsby-plugin-react-helmet`,
+    // `gatsby-plugin-sitemap`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-offline`,
   ],
 }
