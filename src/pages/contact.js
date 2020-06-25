@@ -6,7 +6,7 @@ import Form from "../components/form"
 
 export default function Contact() {
   return (
-    <Layout>
+    <Layout title="Contact me">
       <Wrapper>
         <Box as="h1" sx={{ marginY: 6 }}>
           Reach me any time,

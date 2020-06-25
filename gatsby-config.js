@@ -4,6 +4,7 @@ module.exports = {
     description: `Web developer.`,
     baseUrl: `https://mhmdaljefri.dev`,
     author: `@gatsbyjs`,
+    keywords: ["reactjs", "web", "rails", "javascript", "#100DaysOfCode"],
     navigations: [
       {
         title: "Blog",

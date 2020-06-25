@@ -12,6 +12,7 @@ export default function useBlogPostsListQuery() {
         edges {
           node {
             id
+            excerpt(pruneLength: 200)
 
             fields {
               slug

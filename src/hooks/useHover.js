@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 
 // Hook
 export default function useHover() {
@@ -8,13 +8,14 @@ export default function useHover() {
 
   const ref = useRef(null)
 
-  const handleMouseOver = event => {
+  const handleMouseOver = useCallback(event => {
     if (axis.x !== 0 && axis.y !== 0) setAxis({ x: event.x, y: event.y })
     setValue(true)
 
     return false
-  }
-  const handleMouseOut = () => setValue(false)
+  }, [])
+
+  const handleMouseOut = useCallback(() => setValue(false))
 
   useEffect(
     () => {
@@ -29,7 +30,7 @@ export default function useHover() {
         }
       }
     },
-    [ref.current, isBrowser] // Recall only if ref changes
+    [ref.current, isBrowser, handleMouseOut, handleMouseOver] // Recall only if ref changes
   )
 
   return { ref, isHovering: value, axis }

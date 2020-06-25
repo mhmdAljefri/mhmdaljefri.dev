@@ -2,8 +2,10 @@ import React from "react"
 import { Box, Link } from "theme-ui"
 import Img from "gatsby-image"
 import { Link as Glink } from "gatsby"
+import useBoxShadow from "../../hooks/useBoxShadow"
 
 export default function BlogCard({ style, title, to, excerpt, fluid }) {
+  const boxShadow = useBoxShadow()
   return (
     <Box sx={style}>
       <Box as="h1">
@@ -20,7 +22,7 @@ export default function BlogCard({ style, title, to, excerpt, fluid }) {
           overflow: "hidden",
           width: "100%",
           background: "muted",
-          boxShadow: "10px 10px 50px #ccccccee",
+          boxShadow,
           ":hover": {
             ".blog-post-image-over": {
               opacity: 0.8,

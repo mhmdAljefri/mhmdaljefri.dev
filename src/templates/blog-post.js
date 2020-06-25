@@ -3,21 +3,23 @@ import { graphql } from "gatsby"
 import Wrapper from "../components/wrapper"
 import Img from "gatsby-image"
 import SocialShare from "../components/social-share"
-import { Box, Flex, useColorMode } from "theme-ui"
+import { Box, useColorMode } from "theme-ui"
 import Layout from "../components/layout"
 import CodeHighlightStyle from "../components/CodeHighlight.style"
+import useBoxShadow from "../hooks/useBoxShadow"
 
 export default function BlogPost({ data }) {
   const [mode] = useColorMode()
   console.log({ data, mode })
   const {
-    frontmatter: { image, mediumURL, title },
+    frontmatter: { image, title },
     html,
-    timeToRead,
   } = data.markdownRemark
 
+  const boxShadow = useBoxShadow(null, null, "150px")
+
   return (
-    <Layout>
+    <Layout title={title}>
       <CodeHighlightStyle />
       <Wrapper>
         <Box
@@ -27,7 +29,7 @@ export default function BlogPost({ data }) {
             marginBottom: 70,
             borderRadius: 20,
             overflow: "hidden",
-            boxShadow: "10px 10px  150px #eee",
+            boxShadow,
           }}
         >
           <Img fluid={image?.childImageSharp.fluid || {}} />

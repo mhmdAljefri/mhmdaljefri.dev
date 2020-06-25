@@ -2,28 +2,33 @@ import { Global, css } from "@emotion/core"
 
 import React from "react"
 import { useThemeUI, useColorMode } from "theme-ui"
+import useBoxShadow from "../hooks/useBoxShadow"
 
 export default function CodeHighlightStyle() {
-  const { theme } = useThemeUI()
-  const [mode] = useColorMode()
-  const isDark = mode !== "light"
-  console.log(theme)
+  const {
+    theme: {
+      colors: { muted, primary, secondary },
+    },
+  } = useThemeUI()
+  const boxShadow = useBoxShadow()
+
   return (
     <Global
       styles={css`
         .gatsby-highlight {
+          overflow: auto;
           border-radius: 20px;
-          background-color: ${theme.colors.muted};
+          background-color: ${muted};
           padding: 5px 20px;
-          box-shadow: 10px 10px 50px ${isDark ? "#eeeeee11" : "#eeeeee99"};
+          box-shadow: ${boxShadow};
           margin-bottom: 50px;
         }
         .gatsby-highlight .keyword {
-          color: ${theme.colors.primary};
+          color: ${primary};
         }
         .gatsby-highlight .operator,
         .gatsby-highlight .function {
-          color: ${theme.colors.secondary};
+          color: ${secondary};
         }
       `}
     />

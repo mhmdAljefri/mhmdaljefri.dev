@@ -8,9 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
+import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,12 +19,16 @@ function SEO({ description, lang, meta, title }) {
           siteMetadata {
             title
             description
+            baseUrl
             author
+            keywords
           }
         }
       }
     `
   )
+  const { pathname } = useLocation()
+  const canonical = pathname ? `${site.siteMetadata.baseUrl}${pathname}` : null
 
   const metaDescription = description || site.siteMetadata.description
 
@@ -34,7 +39,21 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
+      link={
+        canonical
+          ? [
+              {
+                rel: "canonical",
+                href: canonical,
+              },
+            ]
+          : []
+      }
       meta={[
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(","),
+        },
         {
           name: `description`,
           content: metaDescription,

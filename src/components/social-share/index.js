@@ -5,6 +5,7 @@ import Icon from "react-icons-kit"
 import { twitter } from "react-icons-kit/fa/twitter"
 import { facebook } from "react-icons-kit/fa/facebook"
 import { useStaticQuery } from "gatsby"
+import SocialIcon from "../social-icon"
 
 const facebookLinkGenerator = page =>
   `https://www.facebook.com/sharer/sharer.php?u=${page}`
@@ -29,22 +30,8 @@ export default function SocialShare() {
 
   return (
     <Box>
-      <Link
-        target="_blank"
-        rel="noopner"
-        title="share with twitter"
-        href={shareTwitterLink}
-      >
-        <Icon icon={twitter} />
-      </Link>
-      <Link
-        target="_blank"
-        rel="noopner"
-        title="share with facebook"
-        href={shareFacebookLink}
-      >
-        <Icon icon={facebook} />
-      </Link>
+      <SocialIcon icon={twitter} href={shareTwitterLink} />
+      <SocialIcon icon={facebook} href={shareFacebookLink} />
     </Box>
   )
 }

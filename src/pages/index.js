@@ -6,7 +6,7 @@ import Skills from "../skills"
 import ProjectsSectionContainer from "../containers/project-section-container"
 
 const IndexPage = () => (
-  <Layout>
+  <Layout title="Hello">
     <Wrapper>
       <Box as="h1" sx={{ marginY: 6, maxWidth: 500 }}>
         Hello <strong>I'm Mohammed Aljefri</strong> Fullstack web developer

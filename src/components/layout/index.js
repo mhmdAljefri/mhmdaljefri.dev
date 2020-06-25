@@ -4,10 +4,10 @@ import SEO from "../seo"
 import Header from "../header"
 import Footer from "../footer"
 
-function Layout({ children }) {
+function Layout({ children, title }) {
   return (
     <>
-      <SEO title="" />
+      <SEO title={title} />
       <Header />
       <main>{children}</main>
       <Footer />
@@ -16,6 +16,7 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
+  title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 }
 
