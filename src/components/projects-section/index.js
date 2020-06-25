@@ -2,7 +2,9 @@ import React from "react"
 import { Box, Flex } from "theme-ui"
 import Wrapper from "../wrapper"
 import useHover from "../../hooks/useHover"
-import FloatingImage from "../floating-image"
+import loadable from "@loadable/component"
+
+const FloatingImage = loadable(() => import("../floating-image"))
 
 function Project({ image, title, compnay, categories }) {
   const { ref, isHovering } = useHover()
