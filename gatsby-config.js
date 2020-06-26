@@ -76,6 +76,16 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: "UA-150405815-1",
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/admin/**"],
+      },
+    },
+
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Mohammed Aljefri`,
