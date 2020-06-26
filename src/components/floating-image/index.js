@@ -7,6 +7,7 @@ import { Box } from "theme-ui"
 function FloatingImage({ fluid }) {
   return (
     <Spring
+      native
       from={{ opcity: 0, left: 0, top: 0 }}
       to={{ opacity: 1, left: 200, top: -50 }}
     >
