@@ -47,7 +47,6 @@ export default function Form() {
         >
           {/* You still need to add the hidden input with the form name to your JSX form */}
           <input type="hidden" name="form-name" value="contact" />
-          <Input name="bot-field" onChange={handleChange} disabled />
           <Input onChange={handleChange} name="name" label="Name" />
           <Input
             onChange={handleChange}

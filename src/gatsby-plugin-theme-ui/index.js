@@ -4,9 +4,11 @@ export default {
   ...defaultTheme,
   colors: {
     ...defaultTheme.colors,
+    primary: "#d23669",
     modes: {
       dark: {
         ...dark.colors,
+        primary: "#ffaaee",
       },
     },
   },

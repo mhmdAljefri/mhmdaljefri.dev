@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import useInterval from "../hooks/useInterval"
-import { Spring } from "react-spring/renderprops"
+import { animated, useSpring } from "react-spring"
+import { useThemeUI } from "theme-ui"
 
 const skills = [
   { children: "☕", role: "img", "aria-label": "Victory" },
@@ -12,18 +13,23 @@ const skills = [
 ]
 
 function Skill({ children, ...rest }) {
+  const {
+    theme: {
+      colors: { primary },
+    },
+  } = useThemeUI()
+  const props = useSpring({
+    to: async (next, cancel) => {
+      await next({ opacity: 1, color: primary })
+      await next({ opacity: 0, color: "rgb(14,26,19)" })
+    },
+    from: { opacity: 0, color: "red" },
+  })
+
   return (
-    <Spring
-      native
-      from={{ opacity: 0, transform: "translateY(50px)" }}
-      to={{ opacity: 1, transform: "translateY(0)" }}
-    >
-      {props => (
-        <div {...rest} style={{ ...props, display: "inline-block" }}>
-          {children}
-        </div>
-      )}
-    </Spring>
+    <animated.div {...rest} style={{ ...props, display: "inline-block" }}>
+      {children}
+    </animated.div>
   )
 }
 
