@@ -1,6 +1,5 @@
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
 const { resolve } = require("path")
-const _ = require("lodash")
 const { createFilePath } = require("gatsby-source-filesystem")
 const blogPostTemplate = resolve("./src/templates/blog-post.js")
 

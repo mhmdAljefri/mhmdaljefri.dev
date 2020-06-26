@@ -2,6 +2,7 @@ import React from "react"
 import { Formik, Form as FForm } from "formik"
 import Input from "../input"
 import { Button } from "theme-ui"
+import { useLocation } from "@reach/router"
 import * as Yup from "yup"
 
 const ContactSchema = Yup.object().shape({
@@ -20,8 +21,9 @@ const encode = data => {
 }
 
 export default function Form() {
+  const { pathname } = useLocation()
   const onSubmit = values => {
-    fetch("/", {
+    fetch(pathname, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
