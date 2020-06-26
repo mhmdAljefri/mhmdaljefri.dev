@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mohammed Aljefri`,
     description: `Web developer.`,
-    baseUrl: `https://mhmdaljefri.dev`,
+    siteUrl: `https://mhmdaljefri.dev`,
     github: `https://github.com/mhmdAljefri`,
     twitter: `https://twitter.com/mhmdaljefri`,
     facebook: `https://www.facebook.com/prosigner.mohmd/`,
@@ -22,11 +22,12 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {},
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

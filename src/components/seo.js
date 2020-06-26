@@ -20,7 +20,7 @@ function SEO({ description, lang, meta, title, image }) {
           siteMetadata {
             title
             description
-            baseUrl
+            siteUrl
             author
             keywords
           }
@@ -31,7 +31,7 @@ function SEO({ description, lang, meta, title, image }) {
   const isDark = useColorMode()[0] !== "light"
   const { pathname } = useLocation()
   const themeColor = isDark ? "#000" : "#fff"
-  const canonical = pathname ? `${site.siteMetadata.baseUrl}${pathname}` : null
+  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
 
   const metaDescription = description || site.siteMetadata.description
 

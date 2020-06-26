@@ -1,10 +1,9 @@
-import React, { useState } from "react"
-import { Box, Link } from "theme-ui"
+import React from "react"
+import { Box } from "theme-ui"
 import { useLocation } from "@reach/router"
-import Icon from "react-icons-kit"
 import { twitter } from "react-icons-kit/fa/twitter"
 import { facebook } from "react-icons-kit/fa/facebook"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import SocialIcon from "../social-icon"
 
 const facebookLinkGenerator = page =>
@@ -17,14 +16,14 @@ export default function SocialShare() {
       query {
         site {
           siteMetadata {
-            baseUrl
+            siteUrl
           }
         }
       }
     `
   )
   const { pathname } = useLocation()
-  const url = `${site.siteMetadata.baseUrl}${pathname}`
+  const url = `${site.siteMetadata.siteUrl}${pathname}`
   const shareFacebookLink = facebookLinkGenerator(url)
   const shareTwitterLink = twitterLinkGenerator(url)
 
