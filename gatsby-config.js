@@ -3,6 +3,10 @@ module.exports = {
     title: `Mohammed Aljefri`,
     description: `Web developer.`,
     baseUrl: `https://mhmdaljefri.dev`,
+    github: `https://github.com/mhmdAljefri`,
+    twitter: `https://twitter.com/mhmdaljefri`,
+    facebook: `https://www.facebook.com/prosigner.mohmd/`,
+    youtube: `https://www.youtube.com/channel/UC1sOs7uZTSUTLPBk3AauaQg`,
     author: `@gatsbyjs`,
     keywords: ["reactjs", "web", "rails", "javascript", "#100DaysOfCode"],
     navigations: [
@@ -20,9 +24,7 @@ module.exports = {
   plugins: [
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
-      options: {
-        devMode: true,
-      },
+      options: {},
     },
     `gatsby-plugin-react-helmet`,
     {
@@ -79,13 +81,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Mohammed Aljefri`,
+        short_name: `MHMDAljefri`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#fff`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        theme_color_in_head: false,
+        icon: `src/images/logo.jpg`, // This path is relative to the root of the site.
       },
     },
 

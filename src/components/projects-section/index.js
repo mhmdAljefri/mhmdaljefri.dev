@@ -6,7 +6,7 @@ import loadable from "@loadable/component"
 
 const FloatingImage = loadable(() => import("../floating-image"))
 
-function Project({ image, title, compnay, categories }) {
+function Project({ image, title, description, categories, from, to, present }) {
   const { ref, isHovering } = useHover()
 
   return (
@@ -32,16 +32,26 @@ function Project({ image, title, compnay, categories }) {
         }}
       />
       {isHovering && <FloatingImage fluid={image} />}
-      <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
-        <Box>
+      <Flex
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexWrap: "wrap",
+        }}
+      >
+        <Box sx={{ maxWidth: 550 }}>
           <Box as="h3">{title}</Box>
-          <Flex sx={{ marginTop: 2 }}>
-            <Box as="p">{compnay}</Box>
-            <Box sx={{ paddingX: 2 }}>-</Box>
-            <Box as="p">{categories.join(", ")}</Box>
-          </Flex>
+          <Box as="p">{description}</Box>
+          <Box as="p">
+            <span role="img" aria-label="Skills">
+              ⚡
+            </span>{" "}
+            {categories.join(", ")}
+          </Box>
         </Box>
-        <Box>date</Box>
+        <Box>
+          {from} - {present ? "present" : to}
+        </Box>
       </Flex>
     </Box>
   )
@@ -59,23 +69,29 @@ export default function ProjectsSection({ list }) {
             fontSize: ["calc(5vw + 15px)", null, "calc(7vw + 20px)", 70],
           }}
         >
-          Works{" "}
+          Work{" "}
           <Box
             as="span"
             sx={{ fontSize: [4, null, 5], transform: "rotate(90deg)" }}
           >
-            History
+            Organizations History
           </Box>
         </Box>
         <Box sx={{ paddingX: 0 }} as="ul">
-          {list.map(({ image, title, compnay, categories }) => (
-            <Project
-              title={title}
-              compnay={compnay}
-              categories={categories}
-              image={image}
-            />
-          ))}
+          {list.map(
+            ({ image, title, description, from, present, to, categories }) => (
+              <Project
+                key={title}
+                title={title}
+                description={description}
+                categories={categories}
+                image={image}
+                from={from}
+                present={present}
+                to={to}
+              />
+            )
+          )}
         </Box>
       </Wrapper>
     </Box>

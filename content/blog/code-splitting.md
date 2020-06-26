@@ -8,14 +8,14 @@ mediumURL: https://medium.com/@algfry12/how-much-easy-code-splitting-is-on-react
 Reactjs is powerful ecosystem, that make web development painless with the ability to create Progressive Web App and many more feature coming with it. and as it JavaScript it like to using bundling.
 Code splitting is not for react it can be in any other framework using web-pack or parceljs for bundling code and packages. **“never make your bundle big It take a time to load”**
 
-!(full train)[/images/blog/bundle.jpeg]
+![full train](/images/blog/bundle.jpeg)
 
 Why does we need code splitting and how much it’s important. If you want make your application thin and much more faster in run time we will need code splitting and how much your application speed and bundle size important code splitting is. JavaScript frameworks are really faster and make web development great than before. But there are new challenges on the right hand and more powerful in front-end on the other. Bundle size is challenge it’s really challenge imagine your application is train because it was created on JavaScript framework train is fast and every time we get new features we add new wagon and this wagon may have many travelers this happen many times on development and your very fast train becoming slow. Yeah very very slow. In this situation we need to solve this problem the problem of hug bundle. And the solution is splitting it. Let us try code splitting.
 
 ## Tasks = () =>
 
 - Implement Code splitting in react 16.6 and newer versions.
-- Implement Code splitting using (react-loadable)[https://github.com/jamiebuilds/react-loadable] package.
+- Implement Code splitting using [react-loadable](https://github.com/jamiebuilds/react-loadable) package.
 - Create custom code splitting function.
 - What’s behind code splitting.
 

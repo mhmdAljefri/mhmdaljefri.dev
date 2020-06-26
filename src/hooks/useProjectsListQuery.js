@@ -12,8 +12,6 @@ export default function useProjectsListQuery() {
         edges {
           node {
             frontmatter {
-              company
-              companyUrl
               draft
               categories
               image {
@@ -23,8 +21,12 @@ export default function useProjectsListQuery() {
                   }
                 }
               }
-              projectUrl
+              url
+              description
               title
+              from(formatString: "DD-MMM-YY")
+              to(formatString: "DD-MMM-YY")
+              present
             }
           }
         }

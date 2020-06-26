@@ -29,13 +29,17 @@ function FloatingImage({ fluid }) {
             Spring: "all ease-in-out",
           }}
         >
-          <Img fluid={fluid || {}} />
+          <Img imgStyle={{ objectPosition: "center" }} fluid={fluid || {}} />
         </Box>
       )}
     </Spring>
   )
 }
 
-FloatingImage.propTypes = {}
+FloatingImage.propTypes = {
+  fluid: PropTypes.shape({
+    src: PropTypes.string,
+  }).isRequired,
+}
 
 export default FloatingImage
