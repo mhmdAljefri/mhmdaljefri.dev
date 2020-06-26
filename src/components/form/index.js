@@ -40,7 +40,7 @@ export default function Form() {
       onSubmit={onSubmit}
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
-        <FForm onSubmit={handleSubmit}>
+        <FForm netlify onSubmit={handleSubmit}>
           {/* You still need to add the hidden input with the form name to your JSX form */}
           <Input onChange={handleChange} name="name" label="Name" />
           <Input
