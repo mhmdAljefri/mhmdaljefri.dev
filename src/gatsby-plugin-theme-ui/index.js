@@ -14,6 +14,20 @@ export default {
     // TODO Add Some Styles
     ...defaultTheme.styles,
   },
+  alerts: {
+    primary: {
+      color: "background",
+      bg: "primary",
+    },
+    muted: {
+      color: "text",
+      bg: "muted",
+    },
+    error: {
+      color: "#721c24",
+      bg: "#f8d7da",
+    },
+  },
   links: {
     bold: {
       fontWeight: "bold",

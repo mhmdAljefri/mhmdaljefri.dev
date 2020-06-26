@@ -1,7 +1,17 @@
 import React from "react"
 import { Formik, Form as FForm } from "formik"
-import { Field } from "../input"
+import Input from "../input"
 import { Button } from "theme-ui"
+import * as Yup from "yup"
+
+const ContactSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(2, "Too Short!")
+    .max(50, "Too Long!")
+    .required("Required"),
+  question: Yup.string().min(10, "Too Short!").required("Required"),
+  email: Yup.string().email("Invalid email").required("Required"),
+})
 
 const encode = data => {
   return Object.keys(data)
@@ -22,14 +32,32 @@ export default function Form() {
   }
 
   return (
-    <Formik onSubmit={onSubmit}>
-      {({ handleSubmit, handleChange }) => (
+    <Formik
+      validationSchema={ContactSchema}
+      initialValues={{ email: "", password: "" }}
+      onSubmit={onSubmit}
+    >
+      {({ handleSubmit, handleChange, values, errors, touched }) => (
         <FForm onSubmit={handleSubmit}>
           {/* You still need to add the hidden input with the form name to your JSX form */}
-          <Field name="name" label="Name" />
-          <Field name="email" required type="email" label="Email" />
-          <Field name="question" required type="textarea" label="Question" />
-          <Button>Submit</Button>
+          <Input onChange={handleChange} name="name" label="Name" />
+          <Input
+            onChange={handleChange}
+            name="email"
+            required
+            type="email"
+            label="Email"
+            errorMessage={touched.email && errors.email}
+          />
+          <Input
+            onChange={handleChange}
+            name="question"
+            required
+            type="textarea"
+            label="Question"
+            errorMessage={touched.question && errors.question}
+          />
+          <Button type="submit">Submit</Button>
         </FForm>
       )}
     </Formik>
