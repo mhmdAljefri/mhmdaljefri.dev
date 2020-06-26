@@ -2,7 +2,6 @@ import React from "react"
 import { Formik, Form as FForm } from "formik"
 import Input from "../input"
 import { Button } from "theme-ui"
-import { useLocation } from "@reach/router"
 import * as Yup from "yup"
 
 const ContactSchema = Yup.object().shape({
@@ -21,9 +20,8 @@ const encode = data => {
 }
 
 export default function Form() {
-  const { pathname } = useLocation()
   const onSubmit = values => {
-    fetch(pathname, {
+    fetch("/contact", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
 
@@ -40,8 +38,16 @@ export default function Form() {
       onSubmit={onSubmit}
     >
       {({ handleSubmit, handleChange, values, errors, touched }) => (
-        <FForm netlify onSubmit={handleSubmit}>
+        <FForm
+          name="contact"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          onSubmit={handleSubmit}
+        >
           {/* You still need to add the hidden input with the form name to your JSX form */}
+          <input type="hidden" name="form-name" value="contact" />
+
           <Input onChange={handleChange} name="name" label="Name" />
           <Input
             onChange={handleChange}
