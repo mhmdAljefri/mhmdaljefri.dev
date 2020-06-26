@@ -8,7 +8,7 @@ mediumURL: https://medium.com/@algfry12/how-much-easy-code-splitting-is-on-react
 Reactjs is powerful ecosystem, that make web development painless with the ability to create Progressive Web App and many more feature coming with it. and as it JavaScript it like to using bundling.
 Code splitting is not for react it can be in any other framework using web-pack or parceljs for bundling code and packages. **“never make your bundle big It take a time to load”**
 
-![full train](/images/blog/bundle.jpeg)
+![full train](../../src/images/blog/bundle.jpeg)
 
 Why does we need code splitting and how much it’s important. If you want make your application thin and much more faster in run time we will need code splitting and how much your application speed and bundle size important code splitting is. JavaScript frameworks are really faster and make web development great than before. But there are new challenges on the right hand and more powerful in front-end on the other. Bundle size is challenge it’s really challenge imagine your application is train because it was created on JavaScript framework train is fast and every time we get new features we add new wagon and this wagon may have many travelers this happen many times on development and your very fast train becoming slow. Yeah very very slow. In this situation we need to solve this problem the problem of hug bundle. And the solution is splitting it. Let us try code splitting.
 
@@ -48,7 +48,7 @@ The dynamic import() syntax is a ECMAScript (JavaScript) proposal not currently 
 
 With the example above we splitting code of OtherComponent and load it once used in our app. webpack bundling the application code as bundle.js and every time we import another component in run time it load it as chunck.js.
 
-!()[/images/blog/1_bctcHqrGWjAZCjKZzZjZYg.png]
+![](../../src/images/blog/1_bctcHqrGWjAZCjKZzZjZYg.png)
 
 Some times loading chunk module of OtherComponent take time so to get better UX use loading indicator or any text tell user that our component is loading and let him or her waiting.
 
@@ -145,4 +145,4 @@ _Waterfall Issue_ look bundle.js and code splitting chunk image above you will s
 
 ## References =>
 
-- (React Docs)[https://reactjs.org/docs/code-splitting.html#import]
+- [React Docs](https://reactjs.org/docs/code-splitting.html#import)
