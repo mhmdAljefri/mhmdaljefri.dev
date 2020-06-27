@@ -94,6 +94,7 @@ module.exports = {
         trackingId: "UA-150405815-1",
         // Avoids sending pageview hits from custom paths
         exclude: ["/admin/**"],
+        defer: true,
       },
     },
 
