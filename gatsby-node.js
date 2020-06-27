@@ -1,56 +1,39 @@
 const { fmImagesToRelative } = require("gatsby-remark-relative-images")
-const { resolve } = require("path")
 const { createFilePath } = require("gatsby-source-filesystem")
-const blogPostTemplate = resolve("./src/templates/blog-post.js")
+const blog = require("./src/node/blog")
+const pages = require("./src/node/pages")
+const removeSlash = require("./src/utils/removeSlash")
 
+const sections = [blog, pages]
+
+// gloabl configuration for each section can be writin @here
 exports.onCreateNode = ({ node, actions, getNode }) => {
   fmImagesToRelative(node)
 
   const { createNodeField } = actions
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
+    const lang = removeSlash(value.split(".")[1] || "")
 
     createNodeField({
       name: `slug`,
       node,
       value,
     })
+    /**
+     * this field created to help us on filtering blog and other sites
+     * with @param {fields.lang} we can filter sites list based on language and many cases like so
+     */
+    createNodeField({
+      name: `lang`,
+      node,
+      value: lang,
+    })
   }
 }
 
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
-
-  // only news page parsed
-  return await graphql(`
-    {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/blog/" } }) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `).then(result => {
-    if (result.errors) {
-      return Promise.reject(result.errors)
-    }
-
-    const { edges } = result.data.allMarkdownRemark
-
-    edges.forEach(({ node }) => {
-      const {
-        fields: { slug },
-      } = node
-
-      createPage({
-        path: slug,
-        component: blogPostTemplate,
-      })
-    })
-  })
+// create each section independently
+// look at https://github.com/gatsbyjs/gatsby/blob/master/www/gatsby-node.js#L18
+exports.createPages = async helpers => {
+  await Promise.all(sections.map(section => section.createPages(helpers)))
 }

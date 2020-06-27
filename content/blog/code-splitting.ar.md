@@ -1,11 +1,13 @@
 ---
-title: How much easy Code splitting is on Reactjs?
+title: تقسيم الكود Code Splitting سهل جداً باستخدام Reactjs؟
 image: /images/blog/wood-splitting.jpg
 mediumURL: https://medium.com/@algfry12/how-much-easy-code-splitting-is-on-reactjs-d94c30e9bec2
 ---
 
-Reactjs is powerful ecosystem, that make web development painless with the ability to create Progressive Web App and many more feature coming with it. and as it JavaScript it like to using bundling.
-Code splitting is not for react it can be in any other framework using web-pack or parceljs for bundling code and packages. **“never make your bundle big It take a time to load”**
+يعتبر Reactjs هيكل قوي في برمجة الواجهات, والي تجعل من برمجة وتطوير الواقع اقل تعب ومجهود وتهئي لك الضروف لبناء تطبيق PWA والكثير من الميزات التي توفرها لك Reactjs مع Create React App او Nextjs او Gatsbyjs. وبما ان Reactjs تعبتر مكتبة مبنية بالجافاسكربت فهي تستخدم bundling او ادوات التحزيم
+تقسيم الحزم او الكود (Code Splitting) مش عملية خاصة بمكتبة Reactjs تقدر تنفذها باي اطار جافاسربت او مكتبة او حتى بيور جافاسكربت. باستخدم اي اداة تحزيم مثل Webpack او Parceljs.
+
+**دائما حطها ببالك لا تخلي الحزم تكبر لانه بتاخر تحميل الموقع**
 
 ![full train](../../src/images/blog/bundle.jpeg)
 

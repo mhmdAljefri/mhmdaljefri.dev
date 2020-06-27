@@ -1,7 +1,7 @@
 import { Global, css } from "@emotion/core"
 
 import React from "react"
-import { useThemeUI, useColorMode } from "theme-ui"
+import { useThemeUI } from "theme-ui"
 import useBoxShadow from "../hooks/useBoxShadow"
 
 export default function CodeHighlightStyle() {
@@ -23,6 +23,11 @@ export default function CodeHighlightStyle() {
           box-shadow: ${boxShadow};
           margin-bottom: 50px;
         }
+        .gatsby-highlight,
+        .gatsby-highlight * {
+          direction: ltr;
+        }
+        .gatsby-highlight .builtin,
         .gatsby-highlight .keyword {
           color: ${primary};
         }

@@ -1,19 +1,23 @@
 import React from "react"
-import useBlogPostsListQuery from "../../hooks/useBlogPostsListQuery"
 import BlogCard from "../../components/blog-card"
+import { Flex } from "theme-ui"
 
-export default function BlogListContainer() {
-  const posts = useBlogPostsListQuery()
-
+export default function BlogListContainer({ posts }) {
   return (
-    <div>
+    <Flex
+      sx={{
+        justifyContent: ["center", null, "space-between"],
+        gap: 10,
+        flexWrap: ["wrap", null, "nowrap"],
+      }}
+    >
       {posts.map(post => (
         <BlogCard
           {...getBlogProps(post)}
           style={{ maxWidth: 450, marginBottom: 20 }}
         />
       ))}
-    </div>
+    </Flex>
   )
 }
 

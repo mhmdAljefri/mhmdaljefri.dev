@@ -23,6 +23,11 @@ function SEO({ description, lang, meta, title, image }) {
             siteUrl
             author
             keywords
+            languages {
+              code
+              default
+              dir
+            }
           }
         }
       }
@@ -32,13 +37,23 @@ function SEO({ description, lang, meta, title, image }) {
   const { pathname } = useLocation()
   const themeColor = isDark ? "#000" : "#fff"
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+  const {
+    dir: defaultLangDir,
+    code: defaultLangCode,
+  } = site.siteMetadata.languages.find(language => language.default)
 
+  const { dir } = site.siteMetadata.languages.find(
+    language => language.code === lang
+  ) || { dir: defaultLangDir }
   const metaDescription = description || site.siteMetadata.description
 
+  if (typeof window !== "undefined")
+    window.languages = site.siteMetadata.languages
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang: lang || defaultLangCode,
+        dir,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}

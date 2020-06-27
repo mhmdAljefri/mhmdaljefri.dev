@@ -1,17 +1,16 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Flex } from "theme-ui"
 import NavItem from "../nav-item"
 import { useStaticQuery, graphql } from "gatsby"
 
-function Nav({ items }) {
+function Nav({ translations, lang }) {
   const data = useStaticQuery(graphql`
     {
       site {
         siteMetadata {
           navigations {
             to
-            title
+            translationKey
             hero
           }
         }
@@ -26,20 +25,13 @@ function Nav({ items }) {
       }}
       as="nav"
     >
-      {data.site.siteMetadata.navigations.map(({ to, title }) => (
-        <NavItem to={to}>{title}</NavItem>
+      {data.site.siteMetadata.navigations.map(({ to, translationKey }) => (
+        <NavItem key={to} to={`${lang ? "/" + lang : ""}${to}`}>
+          {translations?.[translationKey]}
+        </NavItem>
       ))}
     </Flex>
   )
-}
-
-Nav.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      to: PropTypes.string.isRequired,
-    }).isRequired
-  ).isRequired,
 }
 
 export default Nav

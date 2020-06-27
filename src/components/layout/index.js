@@ -5,15 +5,15 @@ import Header from "../header"
 import Footer from "../footer"
 import useModePrefreanceWithThemeUI from "../../hooks/useModePrefreanceWithThemeUI"
 
-function Layout({ children, title }) {
+function Layout({ children, title, lang, footer, nav: navTranslations }) {
   useModePrefreanceWithThemeUI() // will change color mode once preferance changed
 
   return (
     <>
-      <SEO title={title} />
-      <Header />
+      <SEO lang={lang} title={title} />
+      <Header lang={lang} navTranslations={navTranslations} />
       <main>{children}</main>
-      <Footer />
+      <Footer {...footer} />
     </>
   )
 }

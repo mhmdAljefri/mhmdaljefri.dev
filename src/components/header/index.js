@@ -4,8 +4,9 @@ import { Link as GLink } from "gatsby"
 import ColorMode from "../color-mode"
 import Wrapper from "../wrapper"
 import Nav from "../nav"
+import ToggleLanguage from "../toggle-language"
 
-export default function Header() {
+export default function Header({ lang, navTranslations }) {
   return (
     <Box as="header">
       <Wrapper
@@ -24,9 +25,10 @@ export default function Header() {
           >
             MHMDAljefri
           </Link>
+          <ToggleLanguage currentlyUsedLang={lang} />
         </Box>
         <Flex sx={{ alignItems: "center" }}>
-          <Nav />
+          <Nav lang={lang} translations={navTranslations} />
           <ColorMode />
         </Flex>
       </Wrapper>
