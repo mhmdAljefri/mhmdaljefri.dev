@@ -9,13 +9,17 @@ module.exports = {
     youtube: `https://www.youtube.com/channel/UC1sOs7uZTSUTLPBk3AauaQg`,
     author: `@gatsbyjs`,
     keywords: ["reactjs", "web", "rails", "javascript", "#100DaysOfCode"],
+    languages: [
+      { code: "en", dir: "ltr", default: true },
+      { code: "ar", dir: "rtl" },
+    ],
     navigations: [
       {
-        title: "Blog",
+        translationKey: "Blog",
         to: "/blog",
       },
       {
-        title: "Contact",
+        translationKey: "Contact",
         to: "/contact",
         hero: true,
       },
@@ -39,6 +43,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/content`,
+        name: `markdown-pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
         name: `markdown-pages`,
       },
     },

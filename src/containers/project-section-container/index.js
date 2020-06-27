@@ -1,13 +1,23 @@
 import React from "react"
 import ProjectsSection from "../../components/projects-section"
-import useProjectsListQuery from "../../hooks/useProjectsListQuery"
 
-export default function ProjectsSectionContainer() {
-  const projectsEdges = useProjectsListQuery()
-  const projects = projectsEdges.map(({ node }) => ({
+export default function ProjectsSectionContainer({
+  projects,
+  present,
+  orgHistory,
+  works,
+}) {
+  const list = projects.map(({ node }) => ({
     ...node.frontmatter,
     image: node.frontmatter.image?.childImageSharp.fluid,
   }))
 
-  return <ProjectsSection list={projects} />
+  return (
+    <ProjectsSection
+      present={present}
+      orgHistory={orgHistory}
+      works={works}
+      list={list}
+    />
+  )
 }

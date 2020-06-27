@@ -1,0 +1,13 @@
+{
+  "nav": {
+    "Blog": "Blog",
+    "Contact": "Contact"
+  },
+  "a11y": {
+    "mode": "Change Color Mode"
+  },
+  "footer": {
+    "satHi": "Say Hi at",
+    "stayOnTouch": "or stay on touch"
+  }
+}

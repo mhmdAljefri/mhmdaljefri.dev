@@ -24,11 +24,12 @@ function FloatingImage({ fluid }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        background: "#fff",
       }}
     >
       <Box
         sx={{
-          zIndex: -1,
+          zIndex: 1,
           width: [100],
           overflow: "hidden",
           text: "background",

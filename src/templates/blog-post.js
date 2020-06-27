@@ -3,23 +3,22 @@ import { graphql } from "gatsby"
 import Wrapper from "../components/wrapper"
 import Img from "gatsby-image"
 import SocialShare from "../components/social-share"
-import { Box, useColorMode } from "theme-ui"
-import Layout from "../components/layout"
+import { Box } from "theme-ui"
 import CodeHighlightStyle from "../components/CodeHighlight.style"
 import useBoxShadow from "../hooks/useBoxShadow"
 
-export default function BlogPost({ data }) {
-  const [mode] = useColorMode()
-  console.log({ data, mode })
-  const {
-    frontmatter: { image, title },
-    html,
-  } = data.markdownRemark
-
+export default function BlogPost({
+  data: {
+    markdownRemark: {
+      frontmatter: { image, title },
+      html,
+    },
+  },
+}) {
   const boxShadow = useBoxShadow(null, null, "150px")
 
   return (
-    <Layout title={title}>
+    <>
       <CodeHighlightStyle />
       <Wrapper>
         <Box
@@ -39,17 +38,13 @@ export default function BlogPost({ data }) {
         <SocialShare />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Wrapper>
-    </Layout>
+    </>
   )
 }
 
 export const blogQuery = graphql`
-  query myBlogPostQuery($path: String!) {
-    markdownRemark(
-      frontmatter: {}
-      fileAbsolutePath: {}
-      fields: { slug: { eq: $path } }
-    ) {
+  query myBlogPostQuery($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       frontmatter {
         image {
           childImageSharp {

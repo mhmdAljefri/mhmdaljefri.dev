@@ -50,14 +50,19 @@ function Project({ image, title, description, categories, from, to, present }) {
           </Box>
         </Box>
         <Box>
-          {from} - {present ? "present" : to}
+          {from} - {present || to}
         </Box>
       </Flex>
     </Box>
   )
 }
 
-export default function ProjectsSection({ list }) {
+export default function ProjectsSection({
+  list,
+  orgHistory,
+  works,
+  present: presentText,
+}) {
   return (
     <Box>
       <Wrapper>
@@ -69,17 +74,25 @@ export default function ProjectsSection({ list }) {
             fontSize: ["calc(5vw + 15px)", null, "calc(7vw + 20px)", 70],
           }}
         >
-          Work{" "}
+          {works}{" "}
           <Box
             as="span"
             sx={{ fontSize: [4, null, 5], transform: "rotate(90deg)" }}
           >
-            Organizations History
+            {orgHistory}
           </Box>
         </Box>
         <Box sx={{ paddingX: 0 }} as="ul">
           {list.map(
-            ({ image, title, description, from, present, to, categories }) => (
+            ({
+              image,
+              title,
+              description,
+              from,
+              present: isPresent,
+              to,
+              categories,
+            }) => (
               <Project
                 key={title}
                 title={title}
@@ -87,7 +100,7 @@ export default function ProjectsSection({ list }) {
                 categories={categories}
                 image={image}
                 from={from}
-                present={present}
+                present={isPresent && presentText}
                 to={to}
               />
             )
