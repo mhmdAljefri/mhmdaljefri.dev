@@ -1,6 +1,7 @@
 import React from "react"
 import BlogCard from "../../components/blog-card"
 import { Flex } from "theme-ui"
+import removeSlash from "../../utils/removeSlash"
 
 export default function BlogListContainer({ posts }) {
   return (
@@ -22,8 +23,10 @@ export default function BlogListContainer({ posts }) {
 }
 
 function getBlogProps({ node }) {
+  const [path, code] = node.fields.slug.split(".")
+  const to = `${code ? "/" + removeSlash(code) : ""}${code ? path : path}`
   return {
-    to: node.fields.slug,
+    to,
     title: node.frontmatter.title,
     excerpt: node.excerpt,
     fluid: node.frontmatter.image?.childImageSharp.fluid || {},

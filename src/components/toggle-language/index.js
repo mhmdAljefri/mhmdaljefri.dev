@@ -32,11 +32,12 @@ export default function ToggleLanguage({ currentlyUsedLang }) {
       currentlyUsedLang ? code !== currentlyUsedLang : !isDefault
     )
 
+    const path = `/${isDefault ? "" : altLang + "/"}`
     return (
       <ThemedLink
         sx={{ marginInlineStart: 15, textDecoration: "none" }}
         as={Link}
-        to={"/" + isDefault ? altLang : ""}
+        to={path}
       >
         {altLang}
       </ThemedLink>
