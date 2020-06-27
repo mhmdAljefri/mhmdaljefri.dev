@@ -2,10 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Link } from "theme-ui"
 import { Link as GatsbyLink } from "gatsby"
-import useIsMobile from "../../hooks/useIsMobile"
 
 function NavItem({ children, to, icon }) {
-  const isMobileView = useIsMobile()
   return (
     <Link
       sx={{
@@ -18,7 +16,7 @@ function NavItem({ children, to, icon }) {
       as={GatsbyLink}
       to={to}
     >
-      {isMobileView || children}
+      {children}
     </Link>
   )
 }
