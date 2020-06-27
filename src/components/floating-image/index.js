@@ -2,20 +2,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import { Box } from "theme-ui"
-import { useSpring, animated } from "react-spring"
 import useBoxShadow from "../../hooks/useBoxShadow"
 
 function FloatingImage({ fluid }) {
-  const props = useSpring({
-    from: { opcity: 0, left: 0, top: 0 },
-    to: { opacity: 1, left: 200, top: -50 },
-  })
-
   const boxShadow = useBoxShadow()
   return (
-    <animated.div
-      style={{
-        ...props,
+    <Box
+      sx={{
         position: "absolute",
         boxShadow,
         overflow: "hidden",
@@ -24,20 +17,15 @@ function FloatingImage({ fluid }) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "#fff",
+        zIndex: 1,
+        width: [100],
+        text: "background",
       }}
     >
-      <Box
-        sx={{
-          zIndex: 1,
-          width: [100],
-          overflow: "hidden",
-          text: "background",
-        }}
-      >
+      <div style={{ width: 100 }}>
         <Img imgStyle={{ objectPosition: "center" }} fluid={fluid || {}} />
-      </Box>
-    </animated.div>
+      </div>
+    </Box>
   )
 }
 

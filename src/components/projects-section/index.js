@@ -1,14 +1,11 @@
 import React from "react"
 import { Box, Flex } from "theme-ui"
 import Wrapper from "../wrapper"
-import useHover from "../../hooks/useHover"
 import loadable from "@loadable/component"
 
 const FloatingImage = loadable(() => import("../floating-image"))
 
 function Project({ image, title, description, categories, from, to, present }) {
-  const { ref, isHovering } = useHover()
-
   return (
     <Box
       sx={{
@@ -21,7 +18,6 @@ function Project({ image, title, description, categories, from, to, present }) {
       as="li"
     >
       <Box
-        ref={ref}
         sx={{
           position: "absolute",
           top: 0,
@@ -29,9 +25,18 @@ function Project({ image, title, description, categories, from, to, present }) {
           bottom: 0,
           right: 0,
           zIndex: 2,
+          "> div": {
+            opacity: 0,
+            transition: "all 400ms linear",
+          },
+          ":hover > div": {
+            opacity: 1,
+            left: "calc(50vw - 50px)",
+          },
         }}
-      />
-      {isHovering && <FloatingImage fluid={image} />}
+      >
+        <FloatingImage fluid={image} />
+      </Box>
       <Flex
         sx={{
           justifyContent: "space-between",
