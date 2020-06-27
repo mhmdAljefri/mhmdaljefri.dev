@@ -36,7 +36,7 @@ export default function ToggleLanguage({ currentlyUsedLang }) {
       <ThemedLink
         sx={{ marginInlineStart: 15, textDecoration: "none" }}
         as={Link}
-        to={"/" + isDefault ? "" : altLang}
+        to={"/" + isDefault ? altLang : ""}
       >
         {altLang}
       </ThemedLink>
