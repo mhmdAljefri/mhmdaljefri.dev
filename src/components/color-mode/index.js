@@ -24,12 +24,6 @@ const IconWrapper = styled.button`
   height: 40px;
   justify-content: center;
   /*
-    roughly compensates for the additional whitespace of this specific
-    "icon button" in relation to its "social icon" siblings;
-    leave the left untouched for some separation from the aforementioned
-  */
-  margin-right: -11px;
-  /*
     allows us to use the default :focus
     outline without the "moon mask" being taken into account
     by the browser when rendering the outline —
