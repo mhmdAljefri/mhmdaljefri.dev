@@ -9,11 +9,15 @@ export default function Footer({ satHi, stayOnTouch }) {
       <Wrapper style={{ marginBottom: 4, marginTop: 6 }}>
         <Box as="h6" sx={{ fontSize: [4] }}>
           {satHi}
-          <br />
-          <Link variant="text" href="mailto:hi@mhmdaljefri.dev">
-            hi@mhmdaljefri.dev
-          </Link>
-          <br />
+        </Box>
+        <Link
+          sx={{ fontSize: [4] }}
+          variant="text"
+          href="mailto:hi@mhmdaljefri.dev"
+        >
+          hi@mhmdaljefri.dev
+        </Link>
+        <Box as="h6" sx={{ fontSize: [4] }}>
           {stayOnTouch}
         </Box>
         <Social />

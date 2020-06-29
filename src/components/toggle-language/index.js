@@ -35,7 +35,7 @@ export default function ToggleLanguage({ currentlyUsedLang }) {
     const path = `/${isDefault ? "" : altLang + "/"}`
     return (
       <ThemedLink
-        sx={{ marginInlineStart: 15, textDecoration: "none" }}
+        sx={{ marginInlineStart: 15, p: 2, textDecoration: "none" }}
         as={Link}
         to={path}
       >

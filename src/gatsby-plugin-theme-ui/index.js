@@ -1,4 +1,5 @@
-import { base as defaultTheme, dark } from "@theme-ui/presets"
+import { base as defaultTheme } from "@theme-ui/presets"
+import nightOwl from "@theme-ui/prism/presets/night-owl.json"
 
 export default {
   ...defaultTheme,
@@ -7,7 +8,14 @@ export default {
     primary: "#d23669",
     modes: {
       dark: {
-        ...dark.colors,
+        text: "#fff",
+        background: "#000",
+        secondary: "#111199",
+        muted: "#f6f6f6",
+        highlight: "#29112c",
+        gray: "#eee",
+        accent: "#f6f6f6",
+        darken: "#f6f6f6",
         primary: "#ffaaee",
       },
     },
@@ -15,6 +23,10 @@ export default {
   styles: {
     // TODO Add Some Styles
     ...defaultTheme.styles,
+
+    code: {
+      ...nightOwl,
+    },
   },
   alerts: {
     primary: {

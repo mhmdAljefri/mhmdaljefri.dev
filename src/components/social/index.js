@@ -23,12 +23,25 @@ export default function Social() {
       }
     }
   `)
+
   return (
     <Box>
-      <SocialIcon href={siteMetadata.twitter} icon={twitter} />
-      <SocialIcon href={siteMetadata.facebook} icon={facebook} />
-      <SocialIcon href={siteMetadata.youtube} icon={youtube} />
-      <SocialIcon href={siteMetadata.github} icon={github} />
+      <SocialIcon
+        araiLabel="twitter"
+        href={siteMetadata.twitter}
+        icon={twitter}
+      />
+      <SocialIcon
+        araiLabel="facebook"
+        href={siteMetadata.facebook}
+        icon={facebook}
+      />
+      <SocialIcon
+        araiLabel="youtube"
+        href={siteMetadata.youtube}
+        icon={youtube}
+      />
+      <SocialIcon araiLabel="github" href={siteMetadata.github} icon={github} />
     </Box>
   )
 }
