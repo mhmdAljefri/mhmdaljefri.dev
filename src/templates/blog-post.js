@@ -4,6 +4,7 @@ import Wrapper from "../components/wrapper"
 import Img from "gatsby-image"
 import SocialShare from "../components/social-share"
 import { Box } from "theme-ui"
+import CodeHighlightStyle from "../components/CodeHighlight.style"
 import useBoxShadow from "../hooks/useBoxShadow"
 
 export default function BlogPost({
@@ -18,6 +19,7 @@ export default function BlogPost({
 
   return (
     <>
+      <CodeHighlightStyle />
       <Wrapper>
         <Box
           sx={{
