@@ -19,7 +19,7 @@ function Skill({ children, ...rest }) {
     },
   } = useThemeUI()
   const props = useSpring({
-    config: { duration: 2000 },
+    config: { duration: 800 },
     to: async (next, cancel) => {
       await next({ opacity: 1, color: primary })
       await next({ opacity: 0, color: "rgb(14,26,19)" })

@@ -4,6 +4,7 @@ import Wrapper from "../components/wrapper"
 import Skills from "../components/skills"
 import ProjectsSectionContainer from "../containers/project-section-container"
 import { graphql } from "gatsby"
+import MogImage from "../components/mog-image"
 
 const IndexPage = ({
   data: {
@@ -19,6 +20,7 @@ const IndexPage = ({
       <Box as="h1" sx={{ marginY: 6, maxWidth: 500 }}>
         {description} <Skills />
       </Box>
+      <MogImage />
     </Wrapper>
     <ProjectsSectionContainer {...translation} projects={edges} />
   </>
