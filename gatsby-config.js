@@ -58,6 +58,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
+        defaultQuality: 100,
         plugins: [
           // `gatsby-remark-embedder`,
           // `gatsby-remark-graphviz`,

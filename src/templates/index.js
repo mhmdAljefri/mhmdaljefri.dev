@@ -51,7 +51,7 @@ export const uery = graphql`
             categories
             image {
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 100) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
@@ -59,8 +59,8 @@ export const uery = graphql`
             url
             description
             title
-            from(formatString: "DD-MMM-YY")
-            to(formatString: "DD-MMM-YY")
+            from(locale: $lang, formatString: "DD-MMM-YY")
+            to(locale: $lang, formatString: "DD-MMM-YY")
             present
           }
         }
