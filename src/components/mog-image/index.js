@@ -3,11 +3,14 @@ import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import { Box, useColorMode } from "theme-ui"
 import useInterval from "../../hooks/useInterval"
+import useLanguage from "../../hooks/useLang"
 
 export default function MogImage() {
   const [mode] = useColorMode()
   const isDark = mode !== "light"
   const [open, setOpen] = useState(false)
+  const { lang } = useLanguage()
+  const isRtl = lang === "ar"
 
   const toggleOpen = () => setOpen(!open)
 
@@ -40,7 +43,8 @@ export default function MogImage() {
             zIndex: -1,
             overflow: "hidden",
             top: 0,
-            right: 0,
+            transform: isRtl && "rotateY(178deg)",
+            [isRtl ? "left" : "right"]: 0,
             transition: "all 200ms",
           }}
         >
