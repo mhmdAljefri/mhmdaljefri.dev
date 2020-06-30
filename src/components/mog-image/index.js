@@ -50,6 +50,8 @@ export default function MogImage() {
         >
           <Img
             style={{
+              minHeight: 350,
+              marginTop: "10vh",
               transform: open ? "scale(1.05)" : "scale(0.95)",
             }}
             fluid={placeholderImage.childImageSharp.fluid}

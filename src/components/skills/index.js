@@ -1,7 +1,8 @@
 import React, { useState } from "react"
 import useInterval from "../../hooks/useInterval"
-import { animated, useSpring } from "react-spring"
 import { useThemeUI } from "theme-ui"
+import { Transition } from "react-spring/renderprops"
+import { animated } from "react-spring"
 
 const skills = [
   { children: "☕", role: "img", "aria-label": "Victory" },
@@ -12,41 +13,30 @@ const skills = [
   { children: "ReactNative" },
 ]
 
-function Skill({ children, ...rest }) {
+export default function Skills() {
   const {
     theme: {
       colors: { primary },
     },
   } = useThemeUI()
-  const props = useSpring({
-    config: { duration: 800 },
-    to: async (next, cancel) => {
-      await next({ opacity: 1, color: primary })
-      await next({ opacity: 0, color: "rgb(14,26,19)" })
-    },
-    from: { opacity: 0, color: "red" },
-  })
+  const [tick, setTick] = useState(0)
+
+  const handleTick = () => setTick(tick >= skills.length - 1 ? 0 : tick + 1)
+
+  useInterval(handleTick, 1500)
 
   return (
-    <animated.div {...rest} style={{ ...props, display: "inline-block" }}>
-      {children}
-    </animated.div>
+    <Transition
+      items={tick}
+      keys={item => item}
+      from={{ transform: "translate3d(-20px,0,0)" }}
+      enter={{ transform: "translate3d(0,0,0)" }}
+      leave={{ display: "none" }}
+      update={{ color: primary }}
+    >
+      {item => props => (
+        <animated.div style={props}>{skills[item].children}</animated.div>
+      )}
+    </Transition>
   )
-}
-
-export default function Skills() {
-  const [currentSkill, setCurrentSkill] = useState(0)
-
-  const handleChangeSkill = () =>
-    currentSkill >= skills.length - 1
-      ? setCurrentSkill(0)
-      : setCurrentSkill(currentSkill + 1)
-
-  useInterval(handleChangeSkill, 2500)
-
-  const renderAbleSkills = skills.map(skillProps => (
-    <Skill key={skillProps.children} {...skillProps} />
-  ))
-
-  return <>{renderAbleSkills[currentSkill]}</>
 }
