@@ -3,6 +3,12 @@ import nightOwl from "@theme-ui/prism/presets/night-owl.json"
 
 export default {
   ...defaultTheme,
+  fonts: {
+    body:
+      '"Cairo", MuseoModerno, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+    heading: "Cairo, MuseoModerno",
+    monospace: "Menlo, monospace",
+  },
   colors: {
     ...defaultTheme.colors,
     primary: "#d23669",
