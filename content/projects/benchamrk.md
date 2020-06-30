@@ -1,7 +1,7 @@
 ---
 title: Benchmark
 url: http://benchmark.ae
-description: Working as full stack web developer and team lead, almost reactjs,  react native and agility things :)
+description: Chief Technical Officer at Benchmark UAE
 image: /images/fmt.png
 from: 2019-04-01
 present: true
