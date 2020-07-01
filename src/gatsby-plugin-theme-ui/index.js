@@ -5,7 +5,7 @@ export default {
   ...defaultTheme,
   fonts: {
     body:
-      '"Cairo", MuseoModerno, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      '"Cairo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
     heading: "Cairo, MuseoModerno",
     monospace: "Menlo, monospace",
   },
@@ -17,7 +17,7 @@ export default {
         text: "#fff",
         background: "#000",
         secondary: "#111199",
-        muted: "#f6f6f6",
+        muted: "#111",
         highlight: "#29112c",
         gray: "#eee",
         accent: "#f6f6f6",
@@ -29,7 +29,19 @@ export default {
   styles: {
     // TODO Add Some Styles
     ...defaultTheme.styles,
+    h1: {
+      fontFamily: "heading",
+    },
+    h2: {
+      fontFamily: "heading",
+    },
+    h3: {
+      fontFamily: "heading",
+    },
 
+    a: {
+      color: "primary",
+    },
     code: {
       ...nightOwl,
     },

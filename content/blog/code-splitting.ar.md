@@ -2,6 +2,7 @@
 title: تقسيم الكود Code Splitting سهل جداً باستخدام Reactjs؟
 image: /images/blog/wood-splitting.jpg
 mediumURL: https://medium.com/@algfry12/how-much-easy-code-splitting-is-on-reactjs-d94c30e9bec2
+drfat: true
 ---
 
 يعتبر Reactjs هيكل قوي في برمجة الواجهات, والي تجعل من برمجة وتطوير الواقع اقل تعب ومجهود وتهئي لك الضروف لبناء تطبيق PWA والكثير من الميزات التي توفرها لك Reactjs مع Create React App او Nextjs او Gatsbyjs. وبما ان Reactjs تعبتر مكتبة مبنية بالجافاسكربت فهي تستخدم bundling او ادوات التحزيم
