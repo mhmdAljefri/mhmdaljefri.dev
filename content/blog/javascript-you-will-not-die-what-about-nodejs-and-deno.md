@@ -33,17 +33,12 @@ JavaScript is everywhere it's on mobile, desktop, IoT, ML, and AI. You can build
 
 ## Is NodeJS gonna die?
 
-I don’t know, maybe. but it was the reason of being JavaScript everywhere and many tech using it on production and that's good enough reason to be alive for a couple of years. NodeJS was a great solution makes JavaScript stronger than ever before. And many Tech tried to run JavaScript in server-side even Netscape it self and all tries suddenly fails because the way they used and philosophy but Ryan Dahl win, with the philosophy of NodeJS. So why it should be die? 
+I don’t know, maybe. but it was the reason of being JavaScript everywhere and many tech using it on production and that's good enough reason to be alive for a couple of years. NodeJS was a great solution makes JavaScript stronger than ever before. And many Tech tried to run JavaScript in server-side even Netscape it self and all tries suddenly fails because the way they used and philosophy but Ryan Dahl win, with the philosophy of NodeJS. So why it should be die?
 
 Short answer because of Deno. Nodejs have many issues as Ryan Dahl and the solution was with Deno. In here some deference between them
 
 | Feature | Deno | NodeJS |
-|---|---|---|
+| --- | --- | --- |
 | Language | Rust | C++ |
-|Supported Language By default| TypeScript + JavaScript | JavaScript |
-| Modules | URLs | node_modules "npm" => lead to Url 🤐 |
-
-
-
-https://blog.bitsrc.io/what-is-deno-and-will-it-replace-nodejs-a13aa1734a74
-https://en.wikipedia.org/wiki/ECMAScript
+| Supported Language By default | TypeScript + JavaScript | JavaScript + TypeScript! need some headech config and some times fails 😩 |
+| Modules | URLs | node_modules "npm" => lead to Url 🤐 in web |
