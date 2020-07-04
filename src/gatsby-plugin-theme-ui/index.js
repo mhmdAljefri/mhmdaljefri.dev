@@ -1,5 +1,4 @@
 import { base as defaultTheme } from "@theme-ui/presets"
-import nightOwl from "@theme-ui/prism/presets/night-owl.json"
 
 export default {
   ...defaultTheme,
@@ -29,21 +28,8 @@ export default {
   styles: {
     // TODO Add Some Styles
     ...defaultTheme.styles,
-    h1: {
-      fontFamily: "heading",
-    },
-    h2: {
-      fontFamily: "heading",
-    },
-    h3: {
-      fontFamily: "heading",
-    },
-
     a: {
       color: "primary",
-    },
-    code: {
-      ...nightOwl,
     },
   },
   alerts: {

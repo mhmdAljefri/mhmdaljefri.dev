@@ -12,7 +12,7 @@ import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
 import { useColorMode } from "theme-ui"
 
-function SEO({ description, lang, meta, title, image }) {
+function SEO({ description, lang, meta, card, title, image }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -91,7 +91,7 @@ function SEO({ description, lang, meta, title, image }) {
         },
         {
           name: `twitter:card`,
-          content: `summary`,
+          content: card ? card : `summary`,
         },
         {
           name: `twitter:creator`,
@@ -104,6 +104,10 @@ function SEO({ description, lang, meta, title, image }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          name: `og:image`,
+          content: image,
         },
       ].concat(meta)}
     />

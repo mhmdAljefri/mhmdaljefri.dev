@@ -7,7 +7,7 @@ module.exports = {
     twitter: `https://twitter.com/mhmdaljefri`,
     facebook: `https://www.facebook.com/prosigner.mohmd/`,
     youtube: `https://www.youtube.com/channel/UC1sOs7uZTSUTLPBk3AauaQg`,
-    author: `@gatsbyjs`,
+    author: `@mhmdAljefri`,
     keywords: ["reactjs", "web", "rails", "javascript", "#100DaysOfCode"],
     languages: [
       { code: "en", dir: "ltr", default: true },
@@ -113,9 +113,21 @@ module.exports = {
     },
 
     `gatsby-plugin-twitter`,
-    // `gatsby-plugin-react-helmet`,
     // `gatsby-plugin-sitemap`,
-    `gatsby-plugin-theme-ui`,
+    {
+      resolve: "gatsby-plugin-theme-ui",
+      options: {
+        prismPreset: "night-owl",
+        preset: "@theme-ui/preset-funk",
+      },
+    },
+    {
+      resolve: "gatsby-theme-style-guide",
+      options: {
+        // sets path for generated page
+        basePath: "/design-system",
+      },
+    },
     `gatsby-plugin-offline`,
   ],
 }

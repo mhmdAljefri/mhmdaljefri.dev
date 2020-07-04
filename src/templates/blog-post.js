@@ -6,6 +6,7 @@ import SocialShare from "../components/social-share"
 import { Box } from "theme-ui"
 import CodeHighlightStyle from "../components/CodeHighlight.style"
 import useBoxShadow from "../hooks/useBoxShadow"
+import { Global, css } from "@emotion/core"
 
 export default function BlogPost({
   data: {
@@ -19,6 +20,11 @@ export default function BlogPost({
 
   return (
     <>
+      <Global
+        styles={theme =>
+          css(`a{color: ${theme.colors.primary}} td {padding: 5px}`)
+        }
+      />
       <CodeHighlightStyle />
       <Wrapper>
         <Box

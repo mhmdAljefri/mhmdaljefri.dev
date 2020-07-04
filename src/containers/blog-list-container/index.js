@@ -7,15 +7,15 @@ export default function BlogListContainer({ posts }) {
   return (
     <Flex
       sx={{
-        justifyContent: ["center", null, "space-between"],
+        justifyContent: "space-evenly",
         gap: 10,
-        flexWrap: ["wrap", null, "nowrap"],
+        flexWrap: ["wrap", null, "wrap", "nowrap"],
       }}
     >
       {posts.map(post => (
         <BlogCard
           {...getBlogProps(post)}
-          style={{ maxWidth: 450, marginBottom: 20 }}
+          style={{ maxWidth: 450, flex: "0 0 350", m: 20 }}
         />
       ))}
     </Flex>

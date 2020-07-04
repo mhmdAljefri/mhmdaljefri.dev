@@ -2240,6 +2240,15 @@
   dependencies:
     prism-react-renderer "^1.0.2"
 
+"@theme-ui/style-guide@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@theme-ui/style-guide/-/style-guide-0.3.0.tgz#7811e82daf0a59d54aebcdc5712253a432c8d2c2"
+  integrity sha512-Jx2cD9fiUMVMprlOFdsUTuEoug7AwxMnP3efR7P0yxQRNbuDtMa5IufJUfTYtvQ2S+pJvKAHFnS73feB/CKCGA==
+  dependencies:
+    "@theme-ui/presets" "^0.3.0"
+    color "^3.1.2"
+    lodash.get "^4.4.2"
+
 "@theme-ui/theme-provider@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@theme-ui/theme-provider/-/theme-provider-0.3.1.tgz#910bc43454fd61b1047d7bb0dce05e36ffb6b44b"
@@ -7491,6 +7500,14 @@ gatsby-telemetry@^1.3.11:
     stack-utils "1.0.2"
     uuid "3.4.0"
 
+gatsby-theme-style-guide@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-style-guide/-/gatsby-theme-style-guide-0.3.1.tgz#b799cb6f509119123e28714a3459f1b4d1b043ed"
+  integrity sha512-lmfxIuPporT+MrCMpC+0partm6NBkzz9DcwowfvaFQ3MyWABOegSLv7h17EQ0c72bmkuKmbohwV7fB3W7RxIcw==
+  dependencies:
+    "@theme-ui/style-guide" "^0.3.0"
+    theme-ui "^0.3.1"
+
 gatsby-transformer-remark@^2.8.18:
   version "2.8.18"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-remark/-/gatsby-transformer-remark-2.8.18.tgz#9832da7d8476f8bd1198a7624a24031b9365f63b"
@@ -10013,6 +10030,11 @@ lodash.foreach@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
   integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.isequal@^4.5.0:
   version "4.5.0"

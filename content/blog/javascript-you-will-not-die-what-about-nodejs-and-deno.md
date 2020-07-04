@@ -2,14 +2,14 @@
 title: JavaScript will not die, is NodeJS will?
 image: "/images/blog/deno-vs-node.jpg"
 date: 2020-07-02
-draft: true
-
+draft: false
 ---
+
 as you see programming evolving daily so if you want to be a great developer in software industry you should have a knowladge and awareness of what's new things in your path and trying to be more compatible with. And choosing the right tools for your self, business and team.
 
-JavaScript is one of the most revolution in software industry especially on web. there a long story around JavaScript and it will be longer.
+JavaScript is one of the most revolution in software industry especially on the web. there are a long stories around JavaScript and they will be longer.
 
-In this post I will share my ideas about JavaScript and reasons of it’s live I will not dive deeply on tech and programming hierarchy this post will be as simple as possible
+In this post I will share my ideas about JavaScript and reasons of it’s live Also I will talk alot about JavaScript Run-Time environment such NodeJS and Deno. I will not dive deeply on tech and programming hierarchy this post will be as simple as possible
 
 ## The history of JavaScript.
 
@@ -17,7 +17,7 @@ In June 1997 Netscape raised the [JavaScript](https://en.wikipedia.org/wiki/Java
 
 ![I'm alive](https://media.giphy.com/media/3ohze0LoTC1ZmCDKJW/giphy.gif)
 
-***
+---
 
 ## Super helpers
 
@@ -29,7 +29,7 @@ NodeJS is really big revolution and it’s helps JavaScript to be everywhere wit
 
 JavaScript is everywhere it's on mobile, desktop, IoT, ML, and AI. You can build a great applications on mobile with react native, desktops with electron and react native and also ML while TensorFlow has a JavaScript version. In the other hand JavaScript is not doing all this independently it got help from another low level language to give it this Diversity and power. exactly C++, NodeJS built with C++ but it had many things goes in wrong way as [Ryan Dahl](), gives a talks about it and raising Deno.
 
-***
+---
 
 ## Is NodeJS gonna die?
 
@@ -37,15 +37,15 @@ I don’t know, maybe. but it was the reason of being JavaScript everywhere and 
 
 Short answer because of Deno. Nodejs built earlier and many new things goes after was not compatible with nodejs. NodeJS Design have many issues as Ryan Dahl and the solution was with Deno. Design issue is hard to fix and while Node.JS served with dozens of real projects it was hard to redesign a new NodeJS.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1gIiZfSbEAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/1gIiZfSbEAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Here some deference between them:
 
-| Feature | Deno | NodeJS |
-| --- | --- | --- |
-| Language | Rust | C++ |
+| Feature                       | Deno                    | NodeJS                                                                    |
+| ----------------------------- | ----------------------- | ------------------------------------------------------------------------- |
+| Language                      | Rust                    | C++                                                                       |
 | Supported Language By default | TypeScript + JavaScript | JavaScript + TypeScript! need some headech config and some times fails 😩 |
-| Modules | URLs | node_modules "npm" => lead to Url 🤐 in web |
+| Modules                       | URLs                    | node_modules "npm" => lead to Url 🤐 in web                               |
 
 ## Conclusion
 

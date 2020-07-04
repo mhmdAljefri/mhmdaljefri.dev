@@ -6,14 +6,13 @@ import Footer from "../footer"
 import useModePrefreanceWithThemeUI from "../../hooks/useModePrefreanceWithThemeUI"
 import LanguageProvider from "../../context/language"
 import { Global, css } from "@emotion/core"
-import { Styled } from "theme-ui"
 
 function Layout({ children, title, lang, footer, nav: navTranslations }) {
   useModePrefreanceWithThemeUI() // will change color mode once preferance changed
   const isAR = lang === "ar"
 
   return (
-    <Styled.root>
+    <>
       <LanguageProvider lang={lang}>
         {isAR ? (
           <Global
@@ -33,7 +32,7 @@ function Layout({ children, title, lang, footer, nav: navTranslations }) {
         <main>{children}</main>
         <Footer {...footer} />
       </LanguageProvider>
-    </Styled.root>
+    </>
   )
 }
 

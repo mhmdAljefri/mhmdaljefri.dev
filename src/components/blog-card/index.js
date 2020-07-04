@@ -9,7 +9,12 @@ export default function BlogCard({ style, title, to, excerpt, fluid }) {
   return (
     <Box sx={style}>
       <Box as="h1">
-        <Link variant="bold" as={Glink} to={to}>
+        <Link
+          variant="bold"
+          sx={{ ":hover": { color: "primary" } }}
+          as={Glink}
+          to={to}
+        >
           {title}
         </Link>
       </Box>
@@ -31,7 +36,6 @@ export default function BlogCard({ style, title, to, excerpt, fluid }) {
         }}
       >
         <Box
-          Link
           className="blog-post-image-over"
           as={Glink}
           variant="text"
@@ -51,9 +55,9 @@ export default function BlogCard({ style, title, to, excerpt, fluid }) {
             justifyContent: "center",
           }}
         >
-          <Box sx={{ textDecoration: "none" }} as="span">
+          <Link sx={{ textDecoration: "none" }} as="span">
             Details
-          </Box>
+          </Link>
         </Box>
         <Img fluid={fluid} />
       </Box>
