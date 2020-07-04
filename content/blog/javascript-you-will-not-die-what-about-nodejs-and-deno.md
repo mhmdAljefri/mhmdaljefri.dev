@@ -35,10 +35,18 @@ JavaScript is everywhere it's on mobile, desktop, IoT, ML, and AI. You can build
 
 I don’t know, maybe. but it was the reason of being JavaScript everywhere and many tech using it on production and that's good enough reason to be alive for a couple of years. NodeJS was a great solution makes JavaScript stronger than ever before. And many Tech tried to run JavaScript in server-side even Netscape it self and all tries suddenly fails because the way they used and philosophy but Ryan Dahl win, with the philosophy of NodeJS. So why it should be die?
 
-Short answer because of Deno. Nodejs have many issues as Ryan Dahl and the solution was with Deno. In here some deference between them
+Short answer because of Deno. Nodejs built earlier and many new things goes after was not compatible with nodejs. NodeJS Design have many issues as Ryan Dahl and the solution was with Deno. Design issue is hard to fix and while Node.JS served with dozens of real projects it was hard to redesign a new NodeJS.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1gIiZfSbEAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+Here some deference between them:
 
 | Feature | Deno | NodeJS |
 | --- | --- | --- |
 | Language | Rust | C++ |
 | Supported Language By default | TypeScript + JavaScript | JavaScript + TypeScript! need some headech config and some times fails 😩 |
 | Modules | URLs | node_modules "npm" => lead to Url 🤐 in web |
+
+## Conclusion
+
+Deno conception is better but it's still earlier to kill nodejs. the most good thing in Deno is Rust. Rust is really good language and as frontend developer it the right time for me to learn it to dive deeply on [WA](https://webassembly.org/) And Contribution in Deno Community. Deno run both JavaScript and TypeScript so it your choice. feel free to say no and share you thoughts.
