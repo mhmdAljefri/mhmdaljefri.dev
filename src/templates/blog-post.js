@@ -7,6 +7,7 @@ import { Box } from "theme-ui"
 import CodeHighlightStyle from "../components/CodeHighlight.style"
 import useBoxShadow from "../hooks/useBoxShadow"
 import { Global, css } from "@emotion/core"
+import SEOCardsImages from "../components/seo-cards-image"
 
 export default function BlogPost({
   data: {
@@ -20,6 +21,7 @@ export default function BlogPost({
 
   return (
     <>
+      <SEOCardsImages image={image.childImageSharp.fluid.src} />
       <Global
         styles={theme =>
           css(`a{color: ${theme.colors.primary}} td {padding: 5px}`)
