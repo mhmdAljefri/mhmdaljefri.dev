@@ -24,10 +24,12 @@ function SEOCardsImages({ image }) {
       }
     }
   `)
+  const imageLink = siteUrl + image
   return (
     <Helmet>
-      <meta name="twitter:image" content={siteUrl + image} />
-      <meta name="og:image" content={siteUrl + image} />
+      <meta name="twitter:image" content={imageLink} />
+      <meta property="og:image" content={imageLink} />
+      <link rel="image_src" href={imageLink} />
     </Helmet>
   )
 }

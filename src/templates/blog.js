@@ -3,6 +3,7 @@ import Wrapper from "../components/wrapper"
 import { Box } from "theme-ui"
 import BlogListContainer from "../containers/blog-list-container"
 import { graphql } from "gatsby"
+import BooksImage from "../components/books-image"
 
 export default function Blog({
   data: {
@@ -15,8 +16,9 @@ export default function Blog({
 }) {
   return (
     <>
-      <Wrapper>
-        <Box as="h1" sx={{ marginY: 6, maxWidth: 500 }}>
+      <Wrapper style={{ position: "relative" }}>
+        <BooksImage />
+        <Box as="h1" sx={{ paddingY: 6, maxWidth: 500 }}>
           {description}
         </Box>
         <BlogListContainer posts={edges} />
