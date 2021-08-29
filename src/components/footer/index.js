@@ -11,9 +11,9 @@ export default function Footer({ satHi, stayOnTouch }) {
         <Link
           sx={{ fontSize: [4] }}
           variant="text"
-          href="mailto:hi@mhmdaljefri.dev"
+          href="mailto:me@mhmdaljefri.dev"
         >
-          hi@mhmdaljefri.dev
+          me@mhmdaljefri.dev
         </Link>
         <Box sx={{ fontSize: [4] }}>{stayOnTouch}</Box>
         <Social />
