@@ -130,7 +130,7 @@ You can enable typechecking based on project by adding `jsconfig.json` or `tscon
 
 ## Conclusion
 
-This is an easy way to enhance your workflow and detect issues inside your editor. you can use it to help your team understand Typescript, or check if Typescript or Flow are fit enough before migrating code bases. it will not check on complier time and no changes will effect your code and tests. you can say it's less cost type checking solution. but it's not replacement for Typescript or Flow.
+This is an easy way to enhance your workflow and detect issues inside your editor. you can use it to help your team understand Typescript, or check if Typescript or Flow are fit enough before migrating code bases. it will not check on complier time and no changes will effect your code and tests. you can say it's less cost type checking solution. but it's not replacement of Typescript or Flow.
 
 ## References
 
