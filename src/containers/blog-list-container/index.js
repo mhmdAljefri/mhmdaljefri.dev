@@ -1,24 +1,18 @@
 import React from "react"
 import BlogCard from "../../components/blog-card"
-import { Flex } from "theme-ui"
+import { Grid } from "theme-ui"
 import removeSlash from "../../utils/removeSlash"
 
 export default function BlogListContainer({ posts }) {
   return (
-    <Flex
-      sx={{
-        justifyContent: "space-evenly",
-        gap: 10,
-        flexWrap: ["wrap", null, "wrap", "nowrap"],
-      }}
-    >
+    <Grid columns={[1, 2, 3, 3, 4]}>
       {posts.map(post => (
         <BlogCard
           {...getBlogProps(post)}
           style={{ maxWidth: 450, flex: "0 0 350", m: 20 }}
         />
       ))}
-    </Flex>
+    </Grid>
   )
 }
 

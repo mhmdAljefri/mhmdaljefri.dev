@@ -10,7 +10,7 @@ export default function CodeHighlightStyle() {
       colors: { muted, primary, secondary },
     },
   } = useThemeUI()
-  const boxShadow = useBoxShadow()
+  const boxShadow = useBoxShadow(undefined, undefined, "12px")
 
   return (
     <Global

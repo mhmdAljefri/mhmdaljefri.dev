@@ -17,7 +17,7 @@ export default function BlogPost({
     },
   },
 }) {
-  const boxShadow = useBoxShadow(null, null, "150px")
+  const boxShadow = useBoxShadow(undefined, undefined, "45px")
 
   return (
     <>
@@ -42,7 +42,9 @@ export default function BlogPost({
           <Img fluid={image?.childImageSharp.fluid || {}} />
         </Box>
 
-        <Box as="h1">{title}</Box>
+        <Box sx={{ fontSize: [24, 32, 42, 60] }} as="h1">
+          {title}
+        </Box>
         <SocialShare />
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </Wrapper>
