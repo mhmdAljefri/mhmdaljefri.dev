@@ -4,8 +4,6 @@ image: /images/blog/punaise-1399423.jpg
 drfat: false
 ---
 
-# Type checking with only JavaScript and VS code
-
 Static type checkers like Flow and TypeScript identify certain types of problems before you even run your code. They can also improve developer workflow by adding features like auto-completion. For this reason, we recommend using Flow or TypeScript instead of PropTypes for larger code bases. [React Doc](https://reactjs.org/docs/static-type-checking.html)
 
 TypeScript is Great it's give you a lot of features over JavaScript, but in some situations, it can be exhausting. it’s not that easy to migrate a team from JavaScript to TypeScript especially when they’re not expert enough on TypeScript. But can we get the benefits of TypeScript with only JavaScript? Yes, we can.
