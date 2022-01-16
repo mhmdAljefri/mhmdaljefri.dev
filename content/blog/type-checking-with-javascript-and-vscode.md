@@ -21,7 +21,7 @@ To check Whole file, just add `// @ts-check` on the top of the file
 ```js
 // @ts-check
 
-;(() => {
+(() => {
   let acceptOnlyNumber = 09666
 
   acceptOnlyNumber = "text" //Type 'string' is not assignable to type 'number'
@@ -35,7 +35,7 @@ You will find type error when you hover over acceptOnlyNumber variable. Also you
 ```js
 // @ts-check
 
-;(() => {
+(() => {
   let acceptOnlyNumberWithoutCheck = 123
 
   // @ts-ignore
@@ -57,7 +57,7 @@ JSDoc 3 is an API documentation generator for JavaScript, similar to Javadoc or 
 Example of adding types
 
 ```js
-;(() => {
+(() => {
   /** @type {number | string} */
   let acceptOnlyNumberOrString = 09666
 
@@ -84,7 +84,7 @@ Example of defining types
 
 ```js
 // example with @typedef
-;(() => {
+(() => {
   /**
    * A number, or a string
    * @typedef {(number|string)} NumberLike
