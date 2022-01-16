@@ -41,7 +41,7 @@ export const uery = graphql`
       filter: {
         fields: { lang: { eq: $lang } }
         frontmatter: { draft: { ne: true } }
-        fileAbsolutePath: { regex: "/projects/" }
+        fileAbsolutePath: { regex: "/content/projects/" }
       }
     ) {
       edges {
@@ -61,7 +61,6 @@ export const uery = graphql`
             title
             from(locale: $lang, formatString: "DD-MMM-YY")
             to(locale: $lang, formatString: "DD-MMM-YY")
-            present
           }
         }
       }
