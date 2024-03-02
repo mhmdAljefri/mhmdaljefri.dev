@@ -1,19 +1,15 @@
 ---
 title: JavaScript will not die, is NodeJS will?
-image: "/images/blog/deno-vs-node.jpg"
+image: "/blog/deno-vs-node.jpg"
 date: 2020-07-02
 draft: false
 ---
 
-as you see programming evolving daily so if you want to be a great developer in software industry you should have a knowladge and awareness of what's new things in your path and trying to be more compatible with. And choosing the right tools for your self, business and team.
+In the ever-evolving world of programming, keeping pace with the latest advancements is key to becoming a standout software developer. It's crucial to stay abreast of new technologies and trends while selecting the right tools for yourself, your business, and your team.
 
-JavaScript is one of the most revolution in software industry especially on the web. there are a long stories around JavaScript and they will be longer.
 
-In this post I will share my ideas about JavaScript and reasons of it’s live Also I will talk alot about JavaScript Run-Time environment such NodeJS and Deno. I will not dive deeply on tech and programming hierarchy this post will be as simple as possible
 
-## The history of JavaScript.
-
-In June 1997 Netscape raised the [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript") as a **scripting language** of [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript "ECMAScript specification on wiki") specification. Over ECMAScript evolved with many and many editions shipped the best practices of writing front-end language and now it’s used in back-ends too. because of ECMAScript JavaScript will not die or it will live longer than anybody think.
+ [JavaScript](https://en.wikipedia.org/wiki/JavaScript "JavaScript") has been a game-changer in the software industry, particularly in web development. Its inception dates back to June 1997 when Netscape introduced it as a **scripting language**  within the [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript "ECMAScript specification on wiki") specification. Since then, ECMAScript has evolved significantly, shaping the best practices in frontend development and branching into backend systems. This evolution ensures JavaScript's longevity, securing its place in the industry.
 
 ![I'm alive](https://media.giphy.com/media/3ohze0LoTC1ZmCDKJW/giphy.gif)
 
@@ -39,14 +35,37 @@ Short answer because of Deno. Nodejs built earlier and many new things goes afte
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/1gIiZfSbEAE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Here some deference between them:
+## The Emergence of Deno
 
-| Feature                       | Deno                    | NodeJS                                                                    |
-| ----------------------------- | ----------------------- | ------------------------------------------------------------------------- |
-| Language                      | Rust                    | C++                                                                       |
-| Supported Language By default | TypeScript + JavaScript | JavaScript + TypeScript! need some headech config and some times fails 😩 |
-| Modules                       | URLs                    | node_modules "npm" => lead to Url 🤐 in web                               |
+
+<table>
+<thead>
+<tr>
+<td>Feature</td>
+<td>Deno</td>
+<td>NodeJS</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language</td>
+<td>Rust</td>
+<td>C++</td>
+</tr>
+<tr>
+<td>Supported Language By default</td>
+<td>TypeScript + JavaScript</td>
+<td>JavaScript + TypeScript! need some headech config and some times fails 😩</td>
+</tr>
+<tr>
+<td>Modules</td>
+<td>URLs</td>
+<td>node_modules &quot;npm&quot; =&gt; lead to Url 🤐 in web</td>
+</tr>
+</tbody>
+</table>
 
 ## Conclusion
 
-Deno conception is better but it's still earlier to kill nodejs. the most good thing in Deno is Rust. Rust is really good language and as frontend developer it the right time for me to learn it to dive deeply on [WA](https://webassembly.org/) And Contribution in Deno Community. Deno run both JavaScript and TypeScript so it your choice. feel free to say no and share you thoughts.
+While Deno presents a compelling vision for the future, NodeJS's entrenched position ensures its continued relevance. Deno's adoption of Rust, a robust language, underscores its potential. As a frontend developer, embracing Rust could offer avenues into technologies like WebAssembly ([WA](https://webassembly.org/)) and foster contributions to the Deno community. Moreover, Deno's support for both JavaScript and TypeScript provides developers with flexibility. Nonetheless, NodeJS's established ecosystem and real-world implementations suggest its endurance despite the rise of Deno.
+
