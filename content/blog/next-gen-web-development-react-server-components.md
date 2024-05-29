@@ -1,6 +1,6 @@
 ---
 title: "Next-Gen Web Development: Unleashing the Power of React Server Components"
-image: /blog/wood-splitting.jpg
+image: /blog/react-ssc.png
 date: 2023-05-29
 draft: false
 ---
@@ -50,15 +50,57 @@ While RSCs offer many advantages, there are challenges to consider:
 
 ## Comparing SSR, CSR, and RSCs
 
-| Feature                    | Server-Side Rendering (SSR)         | Client-Side Rendering (CSR)         | React Server Components (RSCs)    |
-|----------------------------|-------------------------------------|-------------------------------------|------------------------------------|
-| Initial Load Time          | Fast (HTML delivered by server)     | Slow (JS needs to be executed)      | Fast (HTML delivered by server)    |
-| SEO                        | Excellent (HTML fully rendered)     | Poor (content rendered in JS)       | Excellent (HTML fully rendered)    |
-| Performance                | High server load                    | High client load                    | Balanced load                      |
-| Interactivity              | Less dynamic                        | Highly interactive                  | Highly interactive                 |
-| Data Fetching              | Server-side                         | Client-side                         | Server-side                        |
-| Complexity                 | Moderate                            | High (managing state and data)      | Moderate (split responsibilities)  |
-| Security                   | High (server handles data)          | Less (data in client)           | High (server handles data)         |
+<table>
+<tr>
+<th>Feature</th>
+<th>Server-Side Rendering (SSR)</th>
+<th>Client-Side Rendering (CSR)</th>
+<th>React Server Components (RSCs)</th>
+</tr>
+<tr>
+<td>Initial Load Time</td>
+<td>Fast (HTML delivered by server)</td>
+<td>Slow (JS needs to be executed)</td>
+<td>Fast (HTML delivered by server)</td>
+</tr>
+<tr>
+<td>SEO</td>
+<td>Excellent (HTML fully rendered)</td>
+<td>Poor (content rendered in JS)</td>
+<td>Excellent (HTML fully rendered)</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>High server load</td>
+<td>High client load</td>
+<td>Balanced load</td>
+</tr>
+<tr>
+<td>Interactivity</td>
+<td>Less dynamic</td>
+<td>Highly interactive</td>
+<td>Highly interactive</td>
+</tr>
+<tr>
+<td>Data Fetching</td>
+<td>Server-side</td>
+<td>Client-side</td>
+<td>Server-side</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Moderate</td>
+<td>High (managing state and data)</td>
+<td>Moderate (split responsibilities)</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>High (server handles data)</td>
+<td>Less (data in client)</td>
+<td>High (server handles data)</td>
+</tr>
+</table>
+
 
 ## The Future Landscape
 

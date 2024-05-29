@@ -106,14 +106,24 @@ async function getPosts() {
 
   for (const file of files) {
     const filePath = path.join(directoryPath, file);
-    const fileContent: string = fs.readFileSync(filePath, "utf8");
+    const fileContent = fs.readFileSync(filePath, "utf8");
     const { data, content } = fm(fileContent);
+
+    if (!data.date) {
+      throw new Error(`${data.title} should have date`);
+    }
+
     posts.push({
       data,
       filePath: file.replace(".md", ""),
       readingTime: readingTime(content),
     });
   }
+
+  // Sort posts by creation date in descending order
+  posts.sort(
+    (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+  );
 
   return posts;
 }

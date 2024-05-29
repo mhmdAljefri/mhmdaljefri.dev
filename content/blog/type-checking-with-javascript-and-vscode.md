@@ -1,6 +1,7 @@
 ---
 title: Type checking with only JavaScript and VS code
 image: /blog/punaise-1399423.jpg
+date: 2022-01-16
 drfat: false
 ---
 

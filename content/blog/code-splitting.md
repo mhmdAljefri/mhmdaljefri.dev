@@ -1,6 +1,7 @@
 ---
 title: How much easy Code splitting is on Reactjs?
 image: /blog/wood-splitting.jpg
+date: 2018-10-29
 mediumURL: https://medium.com/@algfry12/how-much-easy-code-splitting-is-on-reactjs-d94c30e9bec2
 ---
 

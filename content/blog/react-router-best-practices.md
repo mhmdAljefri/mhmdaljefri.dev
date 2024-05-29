@@ -1,6 +1,7 @@
 ---
 title: React router best practices
 image: /blog/wood-splitting.jpg
+date: 2018-05-08
 mediumURL: https://medium.com/@algfry12/react-router-best-practices-9c564388f4d3
 ---
 
