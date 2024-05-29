@@ -7,6 +7,7 @@ draft: false
 
 Web development has undergone tremendous changes since its inception. From simple HTML files rendered in browsers to dynamic and interactive applications, the evolution has been remarkable. Recently, Jamstack has emerged as a popular architecture, combining the best practices of static site generation and client-side rendering. However, the future holds even more exciting prospects with the introduction of React Server Components (RSCs), which promise to revolutionize the way we build web applications.
 
+
 ## A Brief History of Web Development
 
 In the early days of the web, sites were composed of static HTML files. These files were straightforward to create but lacked interactivity and dynamism. As the web evolved, server-side rendering (SSR) became the norm, with technologies like PHP and ASP.NET dynamically generating HTML on the server before sending it to the client. This allowed for more interactive and personalized user experiences.
