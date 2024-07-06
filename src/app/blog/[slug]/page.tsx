@@ -1,5 +1,6 @@
 import { Text } from "@/components/ui/text";
 import fm from "gray-matter";
+import Image from "next/image";
 import snarkdown from "snarkdown";
 
 export default async function Post({ params }: { params: { slug: string } }) {
@@ -11,6 +12,15 @@ export default async function Post({ params }: { params: { slug: string } }) {
         <Text as="h1" size={6} className="font-bold">
           {post.data.title}
         </Text>
+        <div>
+          <Image
+            src={post.data.image}
+            alt={post.data.title}
+            className="rounded-lg overflow-hidden"
+            width={800}
+            height={400}
+          />
+        </div>
         <div
           className="prose md:prose-lg lg:prose-xl xl:prose-2xl dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: post.content }}
